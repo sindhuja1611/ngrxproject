@@ -18,8 +18,8 @@ export class EditPostComponent implements OnInit {
 post!:Post;
   constructor(private store: Store<AppState>,private route: ActivatedRoute,) {}
 id?:string
-
-  title = 'ngrxproject';
+title?:string;
+description?:string;
   ngOnInit():void{
 
 
@@ -67,10 +67,12 @@ id?:string
     const post: Post = {
       id: this.post.id,
       title,
-      description
+      description,
     };
-    console.log(post);
+   
     this.store.dispatch(updatePost({ post }));
+    this.title='';
+    this.description='';
   }
 
 }

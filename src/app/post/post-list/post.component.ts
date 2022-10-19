@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class PostsListComponent implements OnInit {
   posts?: Observable<Post[]>;
-  count?: Observable<number>;
+  cnt?: Observable<Post[]>;
 
   constructor(private store: Store<AppState>,private router: Router) {}
 
@@ -25,6 +25,7 @@ export class PostsListComponent implements OnInit {
 
    // this.count = this.store.select(getCount);
     this.store.dispatch(loadPosts());
+  
   }
 
   onDeletePost(id: string) {

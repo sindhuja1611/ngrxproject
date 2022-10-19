@@ -8,13 +8,5 @@ export interface postState{
 
 export const initialState:postState=
 {
-    post:[
-        {
-            id:'1',title:'Shirt',description:'fashion'
-        },
-
-        {
-            id:'2',title:'Baby Horses',description:'toys'
-        },
-    ],
+    post:[],
 };

@@ -9,6 +9,8 @@ export const LOGIN_FAIL='[auth page] login failed';
 
 export const loginstart=createAction(LOGIN_START,
     props<{email:string;password:string}>()
+
+    
     );
 
 

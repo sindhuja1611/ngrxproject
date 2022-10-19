@@ -1,7 +1,7 @@
 
 <div class="row">
   <div class="col-md-8">
- <h3>Products</h3>
+<span><h3>Products</h3>   <button  class="btn btn-info" [routerLink]="['home']">Login</button></span>
  <hr>
     <div>
       <button href="#" class="btn btn-primary" (click)="add()">Add Products</button>
@@ -23,8 +23,8 @@
           <td style="word-break: break-all">{{ post.description }}</td>
           <td>
            
-            <button class="btn btn-warning ms-2" [routerLink]="['edit-post']" [queryParams]="{prop: post.id}">Update</button>
-            <button class="btn btn-danger ms-2" (click)="onDeletePost(post.id || '0')" >Delete</button>
+            <button class="btn btn-warning ms-4" [routerLink]="['edit-post']" [queryParams]="{prop: post.id}">Update</button>
+            <button class="btn btn-danger ms-4" (click)="onDeletePost(post.id || '0')" >Delete</button>
           
           </td>
         </tr>

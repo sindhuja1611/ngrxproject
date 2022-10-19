@@ -37,12 +37,15 @@ export class HomeComponent implements OnInit {
      const password=this.postForm.value.password;
 
       this.store.dispatch(loginstart({email,password}));
-  
-      this.router.navigate(['post']);
-
+    
+      this.log();
 
     }
- 
+ log()
+ {
+  this.router.navigate(['/post']);
+
+ }
   }
 
 

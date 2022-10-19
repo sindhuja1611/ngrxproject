@@ -24,6 +24,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthEffects } from './auth/state/auth.effects';
 import { AuthReducer } from './auth/state/auth.reducer';
 import { AUTH_STATE_NAME } from './auth/state/auth.selector';
+import { NavComponent } from './nav/nav.component';
+import { PostsEffects } from './post/state/posts.effect';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { POST_STATE_NAME } from './post/state/posts.selector';
 
 
 @NgModule({
@@ -36,6 +43,7 @@ import { AUTH_STATE_NAME } from './auth/state/auth.selector';
     HomeComponent,
     PostsListComponent,
     AddPostComponent,
+    NavComponent,
     EditPostComponent
 
   ],
@@ -45,11 +53,17 @@ import { AUTH_STATE_NAME } from './auth/state/auth.selector';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+
     EffectsModule.forRoot(),
-    EffectsModule.forFeature([AuthEffects]),
-    StoreModule.forFeature(AUTH_STATE_NAME,AuthReducer),
+    EffectsModule.forFeature([AuthEffects,PostsEffects]),
+    //StoreModule.forFeature(AUTH_STATE_NAME,AuthReducer),
+    StoreModule.forFeature(POST_STATE_NAME,postReducer),
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({  logOnly: environment.production }),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
  
   ],
   providers: [],
