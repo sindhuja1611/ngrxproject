@@ -38,14 +38,8 @@ export class HomeComponent implements OnInit {
 
       this.store.dispatch(loginstart({email,password}));
     
-      this.log();
-
     }
- log()
- {
-  this.router.navigate(['/post']);
 
- }
   }
 
 

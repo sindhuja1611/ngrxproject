@@ -71,8 +71,7 @@ description?:string;
     };
    
     this.store.dispatch(updatePost({ post }));
-    this.title='';
-    this.description='';
+  
   }
 
 }

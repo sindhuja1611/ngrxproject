@@ -78,12 +78,7 @@ export class PostsEffects {
       switchMap((action) => {
         return this.postsService.updatePost(action.post).pipe(
           map((data) => {
-            // const updatedPost: Update<Post> = {
-            //   id: action.post.id,
-            //   changes: {
-            //     ...action.post,
-            //   },
-            // };
+          
             return updatePostSuccess({ post: action.post });
           })
         );

@@ -36,10 +36,5 @@ export class PostsListComponent implements OnInit {
 
   }
 
- add()
- {
-  this.router.navigate(['/add-post']);
- }
-
 
 }

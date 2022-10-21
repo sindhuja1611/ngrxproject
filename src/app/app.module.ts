@@ -56,7 +56,7 @@ import { POST_STATE_NAME } from './post/state/posts.selector';
 
     EffectsModule.forRoot(),
     EffectsModule.forFeature([AuthEffects,PostsEffects]),
-    //StoreModule.forFeature(AUTH_STATE_NAME,AuthReducer),
+    StoreModule.forFeature(AUTH_STATE_NAME,AuthReducer),
     StoreModule.forFeature(POST_STATE_NAME,postReducer),
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({  logOnly: environment.production }),

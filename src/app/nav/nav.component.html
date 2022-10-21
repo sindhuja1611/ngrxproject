@@ -1,42 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
+<h1>hai</h1>
+<header>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+  <div id="navbar" class="nav  bg-info  shadow-sm back navbar-collapse fixed-top ">
+    <div class="navbar-brand align-item-center d-flex">
+      <h4 style="color:rgb(52, 204, 250);" >hai welcome</h4>
+      <h4 style="color:rgb(52, 204, 250);" >hai welcome</h4>
+      <h4 style="color:rgb(52, 204, 250);" >hai welcome</h4>
+      <i style="font-size: 25px;">
+        NgRx CRUD Operation With FireBase
+      </i>
+      <strong style="font-size: 30px;"></strong>
+      <div class="form-group">
+      <h4 style="color:rgb(52, 204, 250);" >hai welcome</h4>
+      </div>
+   
+
+
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a (click)="add()">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Page 2</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
+    <div class="d-flex">
+      <ng-container *ngIf="true">
+
+        <button class="btn btn-success ms-2"  [routerLink]="['home']"> SignIn</button>
+        <button class="btn btn-danger ms-2"   [routerLink]="['/']"> LogOut</button>
+
+      
+      </ng-container>
+    </div>
   </div>
-</nav>
-  
-<div class="container">
-  <h3>Right Aligned Navbar</h3>
-  <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
+</header>
+<br><br>
+<br><br>
+
+<div class="row">
+  <div class="col-md-8">
+    <img src="/assets/ngrx.png" width="90%" height="90%">
+
+    <div>
+      
+    </div>
+ 
+ 
+        
+  </div>
+
+  <div class="col-md-4">
+  <app-home></app-home>
+  </div>
 </div>
-
-<router-outlet></router-outlet>
-

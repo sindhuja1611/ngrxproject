@@ -17,8 +17,8 @@ export class AddPostComponent implements OnInit {
 
   constructor(private store: Store<AppState>,private router: Router) {}
 
-
-  title = 'ngrxproject';
+public title?:string;
+public description?:string;
   ngOnInit():void{
     this.postForm=new FormGroup({
   
@@ -45,5 +45,6 @@ export class AddPostComponent implements OnInit {
     };
     console.log(post);
     this.store.dispatch(addPost({ post }));
+
   }
 }

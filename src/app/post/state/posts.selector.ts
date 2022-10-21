@@ -7,7 +7,7 @@ const getPostsState=createFeatureSelector<postState>(POST_STATE_NAME);
 
 export const getPosts= createSelector(getPostsState,
     state=>{
-   console.log("get",state);
+  
     return state.post;
 
 });
